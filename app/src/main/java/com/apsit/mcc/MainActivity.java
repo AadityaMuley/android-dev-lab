@@ -2,6 +2,7 @@ package com.apsit.mcc;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Patterns;
 import android.view.View;
@@ -45,6 +46,10 @@ public class MainActivity extends AppCompatActivity {
                 }
                 else{
                     Toast.makeText(getApplicationContext(), "Login successful", Toast.LENGTH_SHORT).show();
+                    Intent i = new Intent(MainActivity.this, ProfileActivity.class);
+                    i.putExtra("email_ID", usr_email);
+                    i.putExtra("password", usr_password);
+                    startActivity(i);
                 }
             }
         });
